@@ -1,0 +1,43 @@
+<!-- templates/add_medicine.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Medicine Info</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-center">Add New Medicine Info</h1>
+
+    <form action="{{ url_for('add_medicine') }}" method="post">
+        <div class="form-group">
+            <label for="name">Medicine Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="expiry_date">Expiry Date:</label>
+            <input type="date" class="form-control" id="expiry_date" name="expiry_date" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Information</button>
+    </form>
+    <br>
+    <br>
+
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Medicine List</a>
+
+
+</body>
+</html>
